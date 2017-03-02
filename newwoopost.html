@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>New Post By User</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		#bg { position: fixed; bottom: 0; left: 0; }
+		.bgwidth { width: 100%; }
+		.bgheight { height: 100%; }
+</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+		$(function() {
+
+			var theWindow        = $(window),
+			    $bg              = $("#bg"),
+			    aspectRatio      = $bg.width() / $bg.height();
+
+			function resizeBg() {
+
+				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgheight');
+				} else {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgwidth');
+				}
+
+			}
+
+			theWindow.resize(function() {
+				resizeBg();
+			}).trigger("resize");
+
+		});
+	</script>
+	<link rel="woostylefevicon-precomposed" sizes="144x144" href="img/woostylefevicon-144.png">
+    <link rel="woostylefevicon-precomposed" sizes="114x114" href="img/woostylefavicon-114.png">
+    <link rel="woostylefevicon-precomposed" sizes="72x72" href="img/woostylefevicon-72.png">
+    <link rel="woostylefevicon-precomposed" href="img/woostylefevicon-57.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+<img src="fashion10.jpg" id="bg" alt="">
+	<header role="banner">
+		<div id="cd-logo"><a href="#0"><img src="woostyle_logo_small_3.jpg" alt="Logo"><span>DRESS | CLICK | SHARE | REPEAT</span></a></div>
+		<nav class="main-nav">
+			<ul>
+				<!-- inser more links here -->
+				<li><a class="cd-signin" href="#0">Post here!</a></li>
+				<li><a class="cd-signup" href="#0">How It Works</a></li>
+				<li><a class="cd-signup" href="#0">Help</a></li>
+		        <li class="dropdown">
+						<a href="#" class="cd-account dropdown-toggle" data-toggle="dropdown" role="button">My Account <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Edit Profile</a></li>
+							<li><a href="#">View Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Create new post</a></li>
+						</ul>
+					</li>
+					<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-WSP">Submit</button>
+				</form>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0">Post here !!</a></li>
+				<li><a href="#0">Info Abt Tags</a></li>
+			</ul>
+
+			<div id="cd-login"> <!-- log in form -->
+				<form class="cd-form" enctype="multipart/form-data" action="newpost.php" method="post">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">Enter Tagline</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="Tagline" name="tagline">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-description">Enter Description</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Description" name="description">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+					
+					<p class="fieldset">
+						<label for="Cat-sel">Select Category</label>
+						<select class="full-width has-padding has-border"  id="sel1" name="category">
+					    <option value="Casual Wears">Casual Wears</option>
+					    <option value="Ethnic Wears">Ethnic Wears</option>
+					    <option value="Formal Wears">Formal Wears</option>
+					    <option value="Office Wears">Office Wears</option>
+					    <option value="Sports Wear">Sports Wear</option>
+					    <option value="Funky">Funky</option>
+					    <option value="Party Wears">Party Wears</option>
+					    <option value="Seasonal Wears">Seasonal Wears</option>
+					    <option value="Traditional Wears">Traditional Wears</option>
+				        </select>
+						
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="file" id="image" name="image">
+						<label for="addImageFile">Upload Images</label>
+					</p>
+
+					<!--<p class="fieldset">
+						<input class="full-width" type="submit" value="Submit">
+					</p>-->
+					<button type="submit" value="submit" name="submit">submit</button>
+				</form>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-post -->
+
+			<div id="cd-signup"> 
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Enter Brand of product</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Enter Brand Of Product" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">Insert vendor Link</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="text" placeholder="Insert vendor Link">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Enter Category</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Enter Category">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Submit">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a>-->
+			</div><!-- cd-signup-->
+			
+			<!--<div id="cd-signup"> <!--infoabttag-->
+				<!--<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Enter brand of product</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Brand of product">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">Insert vendor link</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="text" placeholder="Insert vendor link">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Enter category</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Enter category">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Submit">
+					</p>
+				</form>-->
+
+				<!-- <a href="#0" class="cd-close-form">Close</a>
+			</div>-->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Gem jQuery -->
+</body>
+</html>

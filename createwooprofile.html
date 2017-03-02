@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>Profile Platform for User</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		#bg { position: fixed; bottom: 0; left: 0; }
+		.bgwidth { width: 100%; }
+		.bgheight { height: 100%; }
+</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+		$(function() {
+
+			var theWindow        = $(window),
+			    $bg              = $("#bg"),
+			    aspectRatio      = $bg.width() / $bg.height();
+
+			function resizeBg() {
+
+				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgheight');
+				} else {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgwidth');
+				}
+
+			}
+
+			theWindow.resize(function() {
+				resizeBg();
+			}).trigger("resize");
+
+		});
+	</script>
+	<!-- Fav and touch icons -->
+    <link rel="woostylefevicon-precomposed" sizes="144x144" href="img/woostylefevicon-144.png">
+    <link rel="woostylefevicon-precomposed" sizes="114x114" href="img/woostylefavicon-114.png">
+    <link rel="woostylefevicon-precomposed" sizes="72x72" href="img/woostylefevicon-72.png">
+    <link rel="woostylefevicon-precomposed" href="img/woostylefevicon-57.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+<img src="fashion10.jpg" id="bg" alt="">
+	<header role="banner">
+		<div id="cd-logo"><a href="#0"><img src="woostyle_logo_small_3.jpg" alt="Logo"><span>DRESS | CLICK | SHARE | REPEAT</span></a></div>
+		<nav class="main-nav">
+			<ul>
+				<!-- inser more links here -->
+				<li><a class="cd-signin" href="#0">Create Profile</a></li>
+				<li><a class="cd-signup" href="#0">How It Works</a></li>
+				<li><a class="cd-signup" href="#0">Contact Us</a></li>
+				<li><a class="cd-signup" href="#0">Help</a></li>
+		        <li class="dropdown">
+						<a href="#" class="cd-account dropdown-toggle" data-toggle="dropdown" role="button">My Account <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Edit Profile</a></li>
+							<li><a href="#">View Profile</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Create new post</a></li>
+						</ul>
+					</li>
+					<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-WSP">Submit</button>
+				</form>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0"></a></li>
+				<!--<li><a href="#0">Tag Things</a></li>-->
+				<!--<li><a href="#0">Info Abt Tags</a></li>-->
+			</ul>
+
+			<div id="cd-login"> <!-- log in form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Enter name:</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Enter Name" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signin-nickname">Enter nickname</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text"  placeholder="Enter Nickname" required>
+						<a href="#0" class="hide-password">Hide</a>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">About me:</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="About Me" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">Places I Have Been To:</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Places I Have Been To" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+					
+					
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">Hobbies And Profession:</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Hobbies And Profession" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+					
+					<!--<p class="fieldset">
+						<label for="Cat-sel">Select Category</label>
+						<select class="full-width has-padding has-border"  id="sel1">
+					    <option>Casual Wears</option>
+					    <option>Ethnic Wears</option>
+					    <option>Formal Wears</option>
+					    <option>office wears</option>
+					    <option>Sports Wear</option>
+					    <option>Funky</option>
+					    <option>Party Wears</option>
+					    <option>Seasonal Wears</option>
+					    <option>Traditional Wears</option>
+				</select>
+						
+						<span class="cd-error-message">Error message here!</span>
+					</p>-->
+
+					<p class="fieldset">
+					    <label class="image-replace cd-picture" for="signin-image">Upload profile phtotograph</label>
+						<input type="file" id="addImageFile">
+						<label for="addImageFile">Upload Profile Photograph</label>
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-instagram" for="signin-instagram">Enter your instagram handle</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Your Instagram Handle" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-facebook" for="signin-facebook">Enter your facebook handle</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Your Facebook Handle" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-twitter" for="signin-twitter">Enter your twitter handle</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Your Twitter Handle" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+					
+					<p class="fieldset">
+						<label class="image-replace cd-website" for="signin-website">Enter your website handle</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Your Website Handle" required>
+						<!--<span class="cd-error-message">Error message here!</span>-->
+					</p>
+
+					<!--<p class="fieldset">
+						<input class="full-width" data-toggle="modal" data-target="#openTagModal" type="submit" value="Want To Tag Anything ?">
+						<!--<div class="cd-user-modal"> <!-- this is the entire modal form, including the background 
+		                  <div class="cd-user-modal-container">
+						            <h4>POST TAG NAME</h4>
+								<h6>Click on the image to tag</h6> 
+								<div class="modal-body">
+								<div class="row">
+									<div class="col-lg-7 pull-left"><img src="img/gauri2-woostyle.gif" alt="" id="coverImage"></div>
+									<div id="popover" class="col-lg-3">
+										<p><span id="x"></span>,,<span id="y"></span></p>
+										<form class="popOverForm">
+											<div class="form-group"><label for="enterProdInfo1">Enter brand of product</label><input type="text" class="form-control"></div>
+											<div class="form-group"><label for="enterProdInfo2">Insert vendor link</label><input type="text" class="form-control"></div>
+											<div class="form-group"><label for="enterProdInfo3">Enter category</label><input type="text" class="form-control"></div>
+											<button class="btn btn-WSP closePopup">Done</button>
+										</form>
+									</div>
+									<div class="col-lg-5 pull-right">
+										<h4><b>Tagged Product:</b></h4>
+										<div class="col-lg-12 col-md-12">
+											<div class="thumbnail">
+												<div class="caption">
+													<h4>Tagline of Post/User/Dress/</h4>
+													<p>Desccription || Meta of UPWS</p>
+													<p><a href="#" class="btn btn-WSP" role="button">Check it out</a> </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+						      </div>
+							</div>-->
+						
+					<!--</p>-->
+					
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Save Changes">
+					</p>
+				</form>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-post -->
+
+			<!--<div id="cd-signup"> 
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a>-->
+			<!--</div>--><!-- cd-signup-->
+			
+			<!--<div id="cd-signup"> 
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Enter brand of product</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Brand of product">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">Insert vendor link</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="text" placeholder="Insert vendor link">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Enter category</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Enter category">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Submit">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a>-->
+			<!--</div>--><!--infoabttag-->
+
+			<!--<div id="cd-reset-password">--> <!-- reset password form -->
+				<!--<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Gem jQuery -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?php
+session_start();
+$error = '';
+ //echo "in loginstt";
+if(isset($_POST['submit']))
+{
+	//echo "       in submit if ";
+	if(empty($_POST['username']) || empty($_POST['password']))
+	{
+		$error = "Username and Password both are required";
+		//echo "please enter";
+		//echo "<script type='text/javascript'>alert('Username and Password both are required')</script>;";
+		 header("location:loginst.php");
+		
+	}
+	else
+	{
+		//echo "inside else";
+		$username=$_POST['username'];
+		$password = $_POST['password'];
+		$con = mysqli_connect("localhost","root","");
+		$db = mysqli_select_db($con,"logincheck");
+		$username= stripslashes($username);
+		$password= stripslashes($password);
+		$username=mysqli_real_escape_string($con,$username);
+		$password = mysqli_real_escape_string($con,$password);
+		$query = "SELECT * FROM loginuser WHERE username='$username' and password='$password'";
+		$run = mysqli_query($con,$query);
+		$rows = mysqli_num_rows($run);
+		if($rows == 1)
+		{
+			//echo "in  query if";
+			$_SESSION['login_user'] = $username;
+			header("location:profilest.php");
+		}
+		else
+		{
+			$error = "Username or Password is invalid";
+		}
+		mysqli_close($con);
+	}
+}
+?>
